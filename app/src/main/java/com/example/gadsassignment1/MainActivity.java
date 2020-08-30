@@ -12,6 +12,8 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     private TabLayout tabLayout;
     /*private ViewPager2 viewPager2;*/
     private ViewPager viewPager;
@@ -22,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Re-name the Action Car and add back Arrow
+        getSupportActionBar().setTitle("LEADERBOAD");
 
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
