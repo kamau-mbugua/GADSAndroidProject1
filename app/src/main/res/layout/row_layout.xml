@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:layout_height="wrap_content"
+        android:focusable="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher_round"
+                android:id="@+id/ivPlaceHolder"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvTopName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NAME PLACE HOLDER"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"/>
+                <TextView
+                    android:id="@+id/tvActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ACTIVITY PLACE HOLDER"
+                    android:textAllCaps="false"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+            
+                
+        </LinearLayout>
+        
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
