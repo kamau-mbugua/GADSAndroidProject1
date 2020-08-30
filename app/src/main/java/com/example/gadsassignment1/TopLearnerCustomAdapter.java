@@ -46,7 +46,7 @@ public class TopLearnerCustomAdapter extends ArrayAdapter<TopLearnerModel> {
 
         tvTopName.setText(topLearnerModelList.get(position).getName());
         tvActivity.setText(topLearnerModelList.get(position).getHours()+"Learning Hours");
-        tvCountry.setText(topLearnerModelList.get(position).getName());
+        tvCountry.setText(topLearnerModelList.get(position).getCountry());
         Glide.with(context).load(topLearnerModelList.get(position).getBadge());
 
        /* ivPlaceHolder.setImageResource(topLearnerModelList.get(position).getBadge());*/
