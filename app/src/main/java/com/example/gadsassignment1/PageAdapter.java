@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-public class PagerAdapter extends FragmentPagerAdapter {
+public class PageAdapter extends FragmentPagerAdapter {
 
     private int numTabs;
     /**
@@ -20,7 +20,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
      * @deprecated use {@link #//FragmentPagerAdapter(FragmentManager, int)} with
      * {@link #BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT}
      */
-    public PagerAdapter(@NonNull FragmentManager fm, int numTabs) {
+    public PageAdapter(@NonNull FragmentManager fm, int numTabs) {
         super(fm);
         this.numTabs = numTabs;
     }
