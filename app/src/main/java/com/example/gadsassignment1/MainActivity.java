@@ -2,6 +2,8 @@ package com.example.gadsassignment1;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
+/*import androidx.viewpager2.widget.ViewPager2;
+import androidx.viewpager2.widget.ViewPager2;*/
 
 import android.os.Bundle;
 
@@ -11,6 +13,7 @@ import com.google.android.material.tabs.TabLayout;
 public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
+    /*private ViewPager2 viewPager2;*/
     private ViewPager viewPager;
     private TabItem tbTopLerner, tbTopSkills;
     public PageAdapter pagerAdapter;
@@ -52,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        viewPager.addOnAdapterChangeListener((ViewPager.OnAdapterChangeListener)new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        //viewPager.addOnAdapterChangeListener((ViewPager.OnAdapterChangeListener)new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
     }
+
 }
