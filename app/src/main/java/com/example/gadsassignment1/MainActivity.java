@@ -6,8 +6,11 @@ import androidx.viewpager.widget.ViewPager;
 /*import androidx.viewpager2.widget.ViewPager2;
 import androidx.viewpager2.widget.ViewPager2;*/
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
@@ -37,9 +40,20 @@ public class MainActivity extends AppCompatActivity {
         tbTopSkills = findViewById(R.id.tbTopSkills);
         toolbar = (Toolbar) findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
+        Button btnSubmit = findViewById(R.id.btnSubmit);
 
         pagerAdapter = new PageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
+
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this,SubmitForm.class);
+                startActivity(intent);
+                return;
+            }
+        });
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -69,12 +83,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
 
-        // Inflate the menu; this adds items to the action bar if it is present.
-       // getMenuInflater().inflate(R.menu.menu_main, menu);
-
-        return true;
-    }
 }
