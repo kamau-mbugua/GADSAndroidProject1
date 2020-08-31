@@ -16,7 +16,8 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         //hide() method hides the action bar
-        getSupportActionBar().hide();
+       // getActionBar().hide();
+      //  getSupportActionBar().hide();
         /*New Handler to start the Main Activity and
          * closes this splash
          * after some time*/

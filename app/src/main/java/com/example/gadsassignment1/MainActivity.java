@@ -1,11 +1,13 @@
 package com.example.gadsassignment1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 /*import androidx.viewpager2.widget.ViewPager2;
 import androidx.viewpager2.widget.ViewPager2;*/
 
 import android.os.Bundle;
+import android.view.Menu;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TabItem tbTopLerner, tbTopSkills;
     public PageAdapter pagerAdapter;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +29,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Re-name the Action Car and add back Arrow
-        getSupportActionBar().setTitle("LEADERBOAD");
+        /*getSupportActionBar().setTitle("LEADERBOAD");*/
 
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
         tbTopLerner= findViewById(R.id.tbTopLerner);
         tbTopSkills = findViewById(R.id.tbTopSkills);
+        toolbar = (Toolbar) findViewById(R.id.toolBar);
+        setSupportActionBar(toolbar);
 
         pagerAdapter = new PageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
@@ -64,4 +69,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        // Inflate the menu; this adds items to the action bar if it is present.
+       // getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        return true;
+    }
 }
