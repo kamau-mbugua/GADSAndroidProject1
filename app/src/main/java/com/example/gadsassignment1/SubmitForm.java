@@ -1,5 +1,6 @@
 package com.example.gadsassignment1;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -7,8 +8,12 @@ import android.os.Bundle;
 import android.provider.SyncStateContract;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -72,17 +77,57 @@ public class SubmitForm extends AppCompatActivity {
                         TextUtils.isEmpty(etLName.getText().toString()) ||
                     TextUtils.isEmpty(etUrl.getText().toString()))
                 {
-                    Toast.makeText(SubmitForm.this,"All fields are mandatory.",Toast.LENGTH_LONG).show();
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(SubmitForm.this, R.style.Theme_AppCompat_Light_Dialog_Alert);
+                    View view = LayoutInflater.from(SubmitForm.this).inflate(R.layout.unsucess_dialogue, null);
+                    TextView textView = view.findViewById(R.id.tvNotSuccessful);
+                    ImageView imageButton = view.findViewById(R.id.imageView2);
+                    textView.setText("All fields are mandatory!!!");
+
+                    imageButton.setImageResource(R.drawable.ic_baseline_warning_24);
+
+
+
+
+                    builder.setView(view);
+                    builder.show();
+                    //Toast.makeText(SubmitForm.this,"All fields are mandatory.",Toast.LENGTH_LONG).show();
                     return;
                 }
                 //Check if a valid email is entered
                 if(!android.util.Patterns.EMAIL_ADDRESS.matcher(etEmail.getText().toString()).matches())
                 {
-                    Toast.makeText(SubmitForm.this,"Please enter a valid email.",Toast.LENGTH_LONG).show();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(SubmitForm.this,R.style.Theme_AppCompat_Light_Dialog_Alert);
+                    View view = LayoutInflater.from(SubmitForm.this).inflate(R.layout.unsucess_dialogue, null);
+                    TextView textView = view.findViewById(R.id.tvNotSuccessful);
+                    ImageView imageButton = view.findViewById(R.id.imageView2);
+                   textView.setText("Please enter a valid email!!!");
+                    imageButton.setImageResource(R.drawable.ic_baseline_warning_24);
+
+                    builder.setView(view);
+                    builder.show();
+                    //Toast.makeText(SubmitForm.this,"Please enter a valid email.",Toast.LENGTH_LONG).show();
                     return;
                 }
                 else{
-                    postData(etEmail.getText().toString().trim(),etFName.getText().toString().trim(),etLName.getText().toString().trim(),etUrl.getText().toString().trim());
+                    AlertDialog.Builder builder = new AlertDialog.Builder(SubmitForm.this,R.style.Theme_AppCompat_Light_Dialog_Alert);
+                    View view = LayoutInflater.from(SubmitForm.this).inflate(R.layout.are_you_sure_dialogue, null);
+                    TextView textView = view.findViewById(R.id.tvAreYouSure);
+                   Button button = view.findViewById(R.id.btnYes);
+
+                    textView.setText(R.string.are_you_sure);
+                    button.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            postData(etEmail.getText().toString().trim(),etFName.getText().toString().trim(),etLName.getText().toString().trim(),etUrl.getText().toString().trim());
+
+                        }
+                    });
+
+
+                    builder.setView(view);
+                    builder.show();
+//                    postData(etEmail.getText().toString().trim(),etFName.getText().toString().trim(),etLName.getText().toString().trim(),etUrl.getText().toString().trim());
                 }
 /*
                 //Create an object for PostDataTask AsyncTask
@@ -111,12 +156,32 @@ public class SubmitForm extends AppCompatActivity {
             public void onResponse(String response) {
 //                Log.d("TAG","Response:",+ response);
                 if (response.length() > 0) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(SubmitForm.this, R.style.Theme_AppCompat_Light_Dialog_Alert);
+                    View view = LayoutInflater.from(SubmitForm.this).inflate(R.layout.success_dialogue, null);
+                    TextView textView = view.findViewById(R.id.tvSuccess);
+                    ImageView imageButton = view.findViewById(R.id.ivSuccessCheck);
+                    textView.setText(R.string.submission_successful);
+                    imageButton.setImageResource(R.drawable.ic_baseline_check_circle_24);
+
+                    builder.setView(view);
+                    builder.show();
+
                     Snackbar.make(btnSubmit, "Successfully Posted", Snackbar.LENGTH_LONG).show();
                     etEmail.setText(null);
                     etFName.setText(null);
                     etLName.setText(null);
                     etUrl.setText(null);
                 } else {
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(SubmitForm.this, R.style.Theme_AppCompat_Light_Dialog_Alert);
+                    View view = LayoutInflater.from(SubmitForm.this).inflate(R.layout.unsucess_dialogue, null);
+                    TextView textView = view.findViewById(R.id.tvNotSuccessful);
+                    ImageView imageButton = view.findViewById(R.id.imageView2);
+                    textView.setText(R.string.submission_not_successful);
+                    imageButton.setImageResource(R.drawable.ic_baseline_warning_24);
+
+                    builder.setView(view);
+                    builder.show();
                     Snackbar.make(btnSubmit, "Try Again", Snackbar.LENGTH_LONG).show();
 
                 }
