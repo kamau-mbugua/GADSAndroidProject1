@@ -1,5 +1,20 @@
-                                                                          # GADSAndroidProject1
+<h1 style="text-align: center;"><span style="text-decoration: underline;"><strong>GADSAndroidProject1</strong></span></h1>
 ## Project Screen Shots
+<p>
+  <img src="https://github.com/kamau-mbugua/GADSAndroidProject1/blob/master/screenshots/1_splashActivity.png" width="200">
+  <img src="https://github.com/kamau-mbugua/GADSAndroidProject1/blob/master/screenshots/2_MainActivity_TopLearnerFragment.png" width="200">
+   <img src="https://github.com/kamau-mbugua/GADSAndroidProject1/blob/master/screenshots/3_MainActivity_TOPIQSkillFragment.png" width="200">
+</p>
+<p>
+  <img src="https://github.com/kamau-mbugua/GADSAndroidProject1/blob/master/screenshots/4_SubmitActivyBeforeData.png" width="200">
+  <img src="https://github.com/kamau-mbugua/GADSAndroidProject1/blob/master/screenshots/5_SubmitActivityAfterData.png" width="200">
+  <img src="https://github.com/kamau-mbugua/GADSAndroidProject1/blob/master/screenshots/6_SubmitButtonPressed.png" width="200">
+</p>
+<p>
+  <img src="https://github.com/kamau-mbugua/GADSAndroidProject1/blob/master/screenshots/7_ConfirmAllFieldsAreEntered.png" width="200">
+  <img src="https://github.com/kamau-mbugua/GADSAndroidProject1/blob/master/screenshots/8_DataNotSentError.png" width="200">
+  <img src="https://github.com/kamau-mbugua/GADSAndroidProject1/blob/master/screenshots/9_DataSuccessfulySent.png" width="200">
+</p>
 
 
 ## Google Africa Developer Scholarship Phase II 
