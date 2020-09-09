@@ -44,6 +44,7 @@ public class SubmitForm extends AppCompatActivity {
     TextView etFName,etLName,etEmail,etUrl;
     Button btnSubmit;
     RequestQueue queue;
+    String GitUrl = " https://github.com/kamau-mbugua/GADSAndroidProject1.git";
 
     //  private final Context context;
 
@@ -74,8 +75,8 @@ public class SubmitForm extends AppCompatActivity {
                 //Make sure all the fields are filled with values
                 if(TextUtils.isEmpty(etEmail.getText().toString()) ||
                         TextUtils.isEmpty(etFName.getText().toString()) ||
-                        TextUtils.isEmpty(etLName.getText().toString()) ||
-                    TextUtils.isEmpty(etUrl.getText().toString()))
+                        TextUtils.isEmpty(etLName.getText().toString()) /*||
+                    TextUtils.isEmpty(etUrl.getText().toString())*/)
                 {
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(SubmitForm.this, R.style.Theme_AppCompat_Light_Dialog_Alert);
@@ -189,6 +190,15 @@ public class SubmitForm extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(SubmitForm.this, R.style.Theme_AppCompat_Light_Dialog_Alert);
+                View view = LayoutInflater.from(SubmitForm.this).inflate(R.layout.unsucess_dialogue, null);
+                TextView textView = view.findViewById(R.id.tvNotSuccessful);
+                ImageView imageButton = view.findViewById(R.id.imageView2);
+                textView.setText(R.string.submission_not_successful);
+                imageButton.setImageResource(R.drawable.ic_baseline_warning_24);
+
+                builder.setView(view);
+                builder.show();
                 Snackbar.make(btnSubmit, "Error while Posting Data", Snackbar.LENGTH_LONG).show();
 
             }
