@@ -81,6 +81,9 @@ public class SubmitForm extends AppCompatActivity {
                     Toast.makeText(SubmitForm.this,"Please enter a valid email.",Toast.LENGTH_LONG).show();
                     return;
                 }
+                else{
+                    postData(etEmail.getText().toString().trim(),etFName.getText().toString().trim(),etLName.getText().toString().trim(),etUrl.getText().toString().trim());
+                }
 /*
                 //Create an object for PostDataTask AsyncTask
                 PostDataTask postDataTask = new PostDataTask();
@@ -134,7 +137,7 @@ public class SubmitForm extends AppCompatActivity {
              * @throws AuthFailureError in the event of auth failure
              */
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams() /*throws AuthFailureError*/ {
                 Map<String, String> params = new HashMap<>();
                 params.put(Email_Address, email);
                 params.put(Name, firstName);
