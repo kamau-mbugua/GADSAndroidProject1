@@ -42,30 +42,49 @@
             android:layout_marginRight="20dp"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/etFName"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/filledTextField"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@color/white"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textColorHint="@color/splashbackgroud"
-                android:hint="First Name"
-                android:textColor="@color/splashbackgroud" />
+                android:layout_height="wrap_content"
+                android:hint="@string/first_name">
 
-            <EditText
-                android:id="@+id/etLName"
+                <EditText
+                    android:id="@+id/etFName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/splashbackgroud"
+                    android:hint="@string/first_name"
+                    android:textColor="@color/splashbackgroud" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/filledTextFieldName"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:background="@color/white"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textColorHint="@color/splashbackgroud"
-                android:hint="Last Name"
-                android:textColor="@color/splashbackgroud" />
+                android:layout_height="wrap_content"
+                android:hint="@string/last_name">
+                <EditText
+                    android:id="@+id/etLName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/splashbackgroud"
+                    android:hint="@string/last_name"
+                    android:textColor="@color/splashbackgroud" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -76,29 +95,48 @@
             android:layout_marginTop="50dp"
             android:layout_marginRight="20dp">
 
-            <EditText
-                android:id="@+id/etEmail"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/filledTextFieldNameEmail"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:ems="10"
-                android:inputType="textEmailAddress"
-                android:background="@color/white"
-                android:textColor="@color/splashbackgroud"
-                android:textColorHint="@color/splashbackgroud"
-                android:hint="Email Address"
-                />
+                android:layout_height="wrap_content"
+                android:hint="@string/email_address">
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:background="@color/white"
+                    android:textColor="@color/splashbackgroud"
+                    android:textColorHint="@color/splashbackgroud"
+                    android:hint="@string/email_address"
+                    />
 
-            <EditText
-                android:id="@+id/etUrl"
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/filledTextFieldNameUrl"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Project on GITHUB(link)"
-                android:textColorHint="@color/splashbackgroud"
-                android:background="@color/white"
-                android:textColor="@color/splashbackgroud"
-                android:layout_marginTop="50dp"/>
+                android:layout_height="wrap_content"
+                android:hint="@string/project_on_github_link">
+
+                <EditText
+                    android:id="@+id/etUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="@string/project_on_github_link"
+                    android:textColorHint="@color/splashbackgroud"
+                    android:background="@color/white"
+                    android:textColor="@color/splashbackgroud"
+                    android:layout_marginTop="50dp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
 
             <Button
                 android:id="@+id/btnSubmit"
